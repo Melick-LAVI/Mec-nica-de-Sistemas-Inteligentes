@@ -1,3 +1,8 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import sympy
+import itertools
+
 def detJf1(sigma, rho, beta):
     return [1, sigma + 1 + beta, (sigma + beta*(sigma + 1) - sigma*rho),
         sigma*beta*(1 - rho)]
@@ -10,12 +15,16 @@ def anl(x: list[sympy.symbols], dxdt: list[sympy.symbols],
         chutes: list = []):
     """
     Analisa pontos de equilíbrio e avalia sua estabilidade, dados:
-    x:    Espaço de estados do sistema -> list[sympy.symbols]
-    dxdt: Derivada do espaço de estados do sistema -> list[sympy.symbols]
-    par : Dicionário com valores numéricos para parâmetros 
+    x:      Espaço de estados do sistema 
+                                    -> list[sympy.symbols]
+    dxdt:   Derivada do espaço de estados do sistema 
+                                    -> list[sympy.symbols]
+    par :   Dicionário com valores numéricos para parâmetros 
                                     -> dict[sympy.symbols: float]
-    solv: Método de solução numérico ou simbólico 
-                                    -> 'num' or 'sym'"""
+    solv:   Método de solução numérico ou simbólico 
+                                    -> 'num' or 'sym'
+    chutes: Lista de chutes iniciais para a solução numérica
+                                    -> list[float]"""
 
     #Jacobiana
     dxdt = sympy.Matrix([i.subs(par) for i in dxdt])
@@ -24,7 +33,7 @@ def anl(x: list[sympy.symbols], dxdt: list[sympy.symbols],
 
     #Pontos de equilíbrio
     if solv == "sym": eq = sympy.solve(dxdt, x, dict=True)
-    else:  # numérico
+    else: 
         for i in chutes:
             try:
                 sol = sympy.nsolve(dxdt, x, i)
@@ -210,11 +219,11 @@ def main():
 
     dxdt = sympy.Matrix([xp1, xp2, xpp1, xpp2])
     x = [x1, x2, xp1, xp2]
-    par = {alpha1: 1, alpha2: 0.5, beta1: -1, beta2: -2, rho: 1, Omega_s: 1.5, 
+    par = {alpha1: -1, alpha2: -0.5, beta1: 1, beta2: 2, rho: 1, Omega_s: 1.5, 
            rho: 1, zeta1: 0.01, zeta2: 0.01}
 
-    grid_x1 = [i/10 for i in range(-30, 31)]
-    grid_x2 = [i/10 for i in range(-30, 31)]
+    grid_x1 = [i/2 for i in range(-40, 41)]
+    grid_x2 = [i/2 for i in range(-40, 41)]
     grid_xp1 = [0]
     grid_xp2 = [0]
 
