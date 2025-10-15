@@ -377,6 +377,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
@@ -392,6 +393,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
@@ -407,6 +409,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
@@ -422,6 +425,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
@@ -670,6 +674,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
@@ -685,6 +690,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
@@ -700,6 +706,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
@@ -715,6 +722,7 @@ def main():
     ind = 0
     for i in range(u[0].size):
         if u[0][i] > tpoin0: ind = i; break
+    plt.figure(figsize = (10, 5))
     plt.title("Mapa de Poincaré")
     plt.xlabel(r"$x$")
     plt.ylabel(r"$\dot x$")
